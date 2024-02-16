@@ -73,7 +73,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass",
+        "peekOfCode": "def parse_task_line(line):\n    \"\"\"\n    Parses a single line from the task log into a dictionary.\n    Parameters:\n    - line (str): A line from the task log file.\n    Returns:\n    - dict: A dictionary containing the parsed key-value pair if the line is valid.\n    - None: If the line does not contain a colon (:) indicating a key-value pair.\n    \"\"\"\n    if \":\" not in line:",
         "detail": "run",
         "documentation": {}
     },
@@ -82,7 +82,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass",
+        "peekOfCode": "def load_tasks():\n    \"\"\"\n    Loads tasks from the log file into the global tasks list.\n    \"\"\"\n    tasks = []\n    task_group = []\n    with open(full_path, \"r+\", encoding=\"utf-8\") as file:\n        for line in file:\n            if line.strip() == \"\" or line.strip().startswith(separator):\n                if task_group:",
         "detail": "run",
         "documentation": {}
     },
@@ -145,7 +145,7 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "task_id = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass",
+        "peekOfCode": "task_id = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"",
         "detail": "run",
         "documentation": {}
     },
@@ -154,7 +154,7 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "separator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):",
+        "peekOfCode": "separator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"\n    Parses a single line from the task log into a dictionary.\n    Parameters:\n    - line (str): A line from the task log file.",
         "detail": "run",
         "documentation": {}
     },
@@ -163,7 +163,7 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "file_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):",
+        "peekOfCode": "file_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"\n    Parses a single line from the task log into a dictionary.\n    Parameters:\n    - line (str): A line from the task log file.\n    Returns:\n    - dict: A dictionary containing the parsed key-value pair if the line is valid.",
         "detail": "run",
         "documentation": {}
     },
@@ -172,7 +172,7 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "desktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass",
+        "peekOfCode": "desktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"\n    Parses a single line from the task log into a dictionary.\n    Parameters:\n    - line (str): A line from the task log file.\n    Returns:\n    - dict: A dictionary containing the parsed key-value pair if the line is valid.\n    - None: If the line does not contain a colon (:) indicating a key-value pair.",
         "detail": "run",
         "documentation": {}
     },
@@ -181,7 +181,7 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "full_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):",
+        "peekOfCode": "full_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"\n    Parses a single line from the task log into a dictionary.\n    Parameters:\n    - line (str): A line from the task log file.\n    Returns:\n    - dict: A dictionary containing the parsed key-value pair if the line is valid.\n    - None: If the line does not contain a colon (:) indicating a key-value pair.\n    \"\"\"",
         "detail": "run",
         "documentation": {}
     }

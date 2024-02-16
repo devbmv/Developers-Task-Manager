@@ -27,11 +27,41 @@ full_path = desktop_path / file_name
 
 
 def parse_task_line(line):
-    pass
+    """
+    Parses a single line from the task log into a dictionary.
+
+    Parameters:
+    - line (str): A line from the task log file.
+
+    Returns:
+    - dict: A dictionary containing the parsed key-value pair if the line is valid.
+    - None: If the line does not contain a colon (:) indicating a key-value pair.
+    """
+    if ":" not in line:
+        return None
+    key, value = line.split(":", 1)
+    return {key.strip(): value.strip()}    
 
 
 def load_tasks():
-    pass
+    """
+    Loads tasks from the log file into the global tasks list.
+    """
+    tasks = []
+    task_group = []
+
+    with open(full_path, "r+", encoding="utf-8") as file:
+        for line in file:
+            if line.strip() == "" or line.strip().startswith(separator):
+                if task_group:
+                    tasks.append(task_group)
+                    task_group = []
+            else:
+                task_info = parse_task_line(line.strip())
+                if task_info:
+                    task_group.append(task_info)
+        if task_group:
+            tasks.append(task_group)
 
 
 def add_task_and_log(description):
