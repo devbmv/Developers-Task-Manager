@@ -199,7 +199,7 @@ def main():
         load_tasks()
     print(Fore.GREEN + "Welcome to Developers' Task Manager")
     while True:
-        time.sleep(1)
+        time.sleep(3)
         clear_screen()
         print("Developers Task Manager:\n")
         print("1: Add task\n2: Modify task\n3: Delete task\n4: Exit\n")

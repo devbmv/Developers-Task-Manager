@@ -127,7 +127,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")\n    while True:\n        time.sleep(1)",
+        "peekOfCode": "def main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")\n    while True:\n        time.sleep(3)",
         "detail": "run",
         "documentation": {}
     },
