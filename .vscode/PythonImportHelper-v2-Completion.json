@@ -118,7 +118,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def clear_screen():\n    pass\ndef main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")",
+        "peekOfCode": "def clear_screen():\n    \"\"\"\n    Clears the console screen based on the operating system.\n    \"\"\"\n    # Check if the operating system is Windows\n    if os.name == \"nt\":\n        os.system(\"cls\")\n    else:\n        # Assume the operating system is Unix/Linux/Mac\n        os.system(\"clear\")",
         "detail": "run",
         "documentation": {}
     },
