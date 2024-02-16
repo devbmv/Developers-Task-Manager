@@ -16,7 +16,7 @@ from colorama import init, Fore
 # Initialize an empty list to store tasks
 tasks = []
 # Initialize task ID based on the current length of tasks
-task_id = len(tasks)
+TASK_ID = len(tasks)
 # Define a separator for visual clarity in the log file
 # separator= "-" * 100
 separator = "-" * shutil.get_terminal_size().columns
@@ -71,17 +71,17 @@ def add_task_and_log(description):
     Parameters:
     - description (str): The description of the task to be added.
     """
-    global task_id
-    task_id = len(tasks) + 1
+    global TASK_ID
+    TASK_ID = len(tasks) + 1
 
     now = time.time()
     timestamp = time.strftime("Date: %Y-%m-%d\nTime: %H:%M:%S", time.localtime(now))
-    log_message = f"ID: {task_id}\n{timestamp}\nTask: {description}\n{separator}\n"
+    log_message = f"ID: {TASK_ID}\n{timestamp}\nTask: {description}\n{separator}\n"
 
-    print(f"Task ID <{task_id}>: <{description}> successfully added")
+    print(f"Task ID <{TASK_ID}>: <{description}> successfully added")
     tasks.append(
         {
-            "ID": str(task_id),
+            "ID": str(TASK_ID),
             "Date": time.strftime("%Y-%m-%d", time.localtime(now)),
             "Time": time.strftime("%H:%M:%S", time.localtime(now)),
             "Task": description,
@@ -91,7 +91,7 @@ def add_task_and_log(description):
     with open(full_path, "a+", encoding="utf-8") as file:
         file.seek(0)
         if not file.readlines():
-            file.write(f"{'-'*65} List  Of Tasks: {'-'*65}\n")
+            file.write(f"{'-'*74} List  Of Tasks: {'-'*74}\n")
         file.write(log_message)
 
 
@@ -122,7 +122,7 @@ def delete_task(idx):
     with open(full_path, "w+", encoding="utf-8") as file:
         lines = file.readlines()
         if not lines:
-            file.write(f"{'-'*65} List Of Tasks: {'-'*65}\n")
+            file.write(f"{'-'*74} List Of Tasks: {'-'*74}\n")
         for task_group in tasks:
             for task_dict in task_group:
                 for key, value in task_dict.items():
@@ -168,7 +168,7 @@ def modify_task(task_id_to_modify):
         with open(full_path, "w+", encoding="utf-8") as file:
             lines = file.readlines()
             if not lines:
-                file.write(f"{'-'*65} List Of Tasks: {'-'*65}\n")
+                file.write(f"{'-'*74} List Of Tasks: {'-'*74}\n")
             for task_group in tasks:
                 for task in task_group:
                     for key, value in task.items():
@@ -199,7 +199,7 @@ def main():
         load_tasks()
     print(Fore.GREEN + "Welcome to Developers' Task Manager")
     while True:
-        time.sleep(2)
+        time.sleep(1)
         clear_screen()
         print("Developers Task Manager:\n")
         print("1: Add task\n2: Modify task\n3: Delete task\n4: Exit\n")

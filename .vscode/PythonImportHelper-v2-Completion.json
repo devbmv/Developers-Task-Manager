@@ -91,7 +91,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def add_task_and_log(description):\n    \"\"\"\n    Adds a new task with the given description to the tasks list and logs it to the file.\n    Parameters:\n    - description (str): The description of the task to be added.\n    \"\"\"\n    global task_id\n    task_id = len(tasks) + 1\n    now = time.time()\n    timestamp = time.strftime(\"Date: %Y-%m-%d\\nTime: %H:%M:%S\", time.localtime(now))",
+        "peekOfCode": "def add_task_and_log(description):\n    \"\"\"\n    Adds a new task with the given description to the tasks list and logs it to the file.\n    Parameters:\n    - description (str): The description of the task to be added.\n    \"\"\"\n    global TASK_ID\n    TASK_ID = len(tasks) + 1\n    now = time.time()\n    timestamp = time.strftime(\"Date: %Y-%m-%d\\nTime: %H:%M:%S\", time.localtime(now))",
         "detail": "run",
         "documentation": {}
     },
@@ -127,7 +127,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")\n    while True:\n        time.sleep(2)",
+        "peekOfCode": "def main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")\n    while True:\n        time.sleep(1)",
         "detail": "run",
         "documentation": {}
     },
@@ -136,16 +136,16 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "tasks = []\n# Initialize task ID based on the current length of tasks\ntask_id = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name",
+        "peekOfCode": "tasks = []\n# Initialize task ID based on the current length of tasks\nTASK_ID = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name",
         "detail": "run",
         "documentation": {}
     },
     {
-        "label": "task_id",
+        "label": "TASK_ID",
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "task_id = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"",
+        "peekOfCode": "TASK_ID = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    \"\"\"",
         "detail": "run",
         "documentation": {}
     },
