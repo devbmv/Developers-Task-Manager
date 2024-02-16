@@ -21,9 +21,19 @@ TASK_ID = len(tasks)
 # separator= "-" * 100
 separator = "-" * shutil.get_terminal_size().columns
 # Define the filename for storing task logs
-file_name = "tasks_log.txt"
-desktop_path = Path.home() / "Desktop"
-full_path = desktop_path / file_name
+# file_name = "tasks_log.txt"
+#Unlock next two line to put your file on Desktop 
+# desktop_path = Path.home() / "Desktop"
+# full_path = desktop_path / file_name
+LOG_FILE_NAME = os.getenv('TASKS_LOG_PATH', 'tasks_log.txt')
+
+# Check if the LOG_FILE_NAME is an absolute path, if not, use the desktop path
+if os.path.isabs(LOG_FILE_NAME):
+    full_path = LOG_FILE_NAME
+else:
+    # If running locally, store the tasks log on the desktop for easy access
+    desktop_path = Path.home() / "Desktop"
+    full_path = desktop_path / LOG_FILE_NAME
 
 
 def parse_task_line(line):
