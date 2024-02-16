@@ -1,6 +1,9 @@
 # Developers' Task Manager
 
 The Developers' Task Manager is a Python-based application designed to help developers organize and manage their tasks efficiently. It provides a simple interface to add, modify, and delete tasks, ensuring that developers can focus on what they do best: coding.
+
+![Program Photo](program-screenshot.JPG "Optional Title Text")
+
 ## Overview
 This project, Developers' Task Manager, is a console-based application designed to help software developers manage their tasks efficiently. It offers a simple yet powerful interface to add, modify, delete, and view tasks, making it easier for developers to keep track of their work progress. Built with Python, the application emphasizes ease of use, flexibility, and productivity.
 
