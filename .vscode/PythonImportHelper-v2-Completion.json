@@ -91,7 +91,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass\ndef main():\n    \"\"\"",
+        "peekOfCode": "def add_task_and_log(description):\n    \"\"\"\n    Adds a new task with the given description to the tasks list and logs it to the file.\n    Parameters:\n    - description (str): The description of the task to be added.\n    \"\"\"\n    global task_id\n    task_id = len(tasks) + 1\n    now = time.time()\n    timestamp = time.strftime(\"Date: %Y-%m-%d\\nTime: %H:%M:%S\", time.localtime(now))",
         "detail": "run",
         "documentation": {}
     },

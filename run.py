@@ -65,7 +65,34 @@ def load_tasks():
 
 
 def add_task_and_log(description):
-    pass
+    """
+    Adds a new task with the given description to the tasks list and logs it to the file.
+
+    Parameters:
+    - description (str): The description of the task to be added.
+    """
+    global task_id
+    task_id = len(tasks) + 1
+
+    now = time.time()
+    timestamp = time.strftime("Date: %Y-%m-%d\nTime: %H:%M:%S", time.localtime(now))
+    log_message = f"ID: {task_id}\n{timestamp}\nTask: {description}\n{separator}\n"
+
+    print(f"Task ID <{task_id}>: <{description}> successfully added")
+    tasks.append(
+        {
+            "ID": str(task_id),
+            "Date": time.strftime("%Y-%m-%d", time.localtime(now)),
+            "Time": time.strftime("%H:%M:%S", time.localtime(now)),
+            "Task": description,
+        }
+    )
+
+    with open(full_path, "a+", encoding="utf-8") as file:
+        file.seek(0)
+        if not file.readlines():
+            file.write(f"{'-'*65} List  Of Tasks: {'-'*65}\n")
+        file.write(log_message)
 
 
 def delete_task(idx):
