@@ -40,7 +40,7 @@ def parse_task_line(line):
     if ":" not in line:
         return None
     key, value = line.split(":", 1)
-    return {key.strip(): value.strip()}    
+    return {key.strip(): value.strip()}
 
 
 def load_tasks():
@@ -96,11 +96,86 @@ def add_task_and_log(description):
 
 
 def delete_task(idx):
-    pass
+    """
+    Deletes a task based on its ID.
+
+    Parameters:
+    - idx (int): The ID of the task to be deleted.
+    """
+    global tasks
+    idx = int(idx)
+
+    tasks_to_keep = []
+    found = False
+
+    for task_group in tasks:
+        for task_dict in task_group:
+            if task_dict.get("ID") == str(idx):
+                found = True
+                break
+        if not found:
+            tasks_to_keep.append(task_group)
+        found = False
+
+    tasks = tasks_to_keep
+
+    with open(full_path, "w+", encoding="utf-8") as file:
+        lines = file.readlines()
+        if not lines:
+            file.write(f"{'-'*65} List Of Tasks: {'-'*65}\n")
+        for task_group in tasks:
+            for task_dict in task_group:
+                for key, value in task_dict.items():
+                    file.write(f"{key}: {value}\n")
+            file.write(separator + "\n")
+
+    if not found:
+        print("Task ID not found.")
 
 
 def modify_task(task_id_to_modify):
-    pass
+    """
+    Modifies the description of a task based on its ID.
+
+    Parameters:
+    - task_id_to_modify (int): The ID of the task to modify.
+    """
+    global tasks
+    load_tasks()
+    found = False
+    try:
+        task_id_to_modify = int(task_id_to_modify)
+    except ValueError:
+        print("Invalid input. Please enter a valid task ID.")
+        return
+
+    for task_group in tasks:
+        for task in task_group:
+            if task.get("ID") == str(task_id_to_modify):
+                new_description = input("Enter the new task description: ")
+                for task_desc in task_group:
+                    if "Task" in task_desc:
+                        task_desc["Task"] = new_description
+                        found = True
+                        break
+                if found:
+                    break
+        if found:
+            break
+
+    if found:
+        print("Task successfully modified.")
+        with open(full_path, "w+", encoding="utf-8") as file:
+            lines = file.readlines()
+            if not lines:
+                file.write(f"{'-'*65} List Of Tasks: {'-'*65}\n")
+            for task_group in tasks:
+                for task in task_group:
+                    for key, value in task.items():
+                        file.write(f"{key}: {value}\n")
+                file.write(separator + "\n")
+    else:
+        print("Task ID not found.")
 
 
 def clear_screen():

@@ -100,7 +100,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass\ndef main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"",
+        "peekOfCode": "def delete_task(idx):\n    \"\"\"\n    Deletes a task based on its ID.\n    Parameters:\n    - idx (int): The ID of the task to be deleted.\n    \"\"\"\n    global tasks\n    idx = int(idx)\n    tasks_to_keep = []\n    found = False",
         "detail": "run",
         "documentation": {}
     },
@@ -109,7 +109,7 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass\ndef main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):",
+        "peekOfCode": "def modify_task(task_id_to_modify):\n    \"\"\"\n    Modifies the description of a task based on its ID.\n    Parameters:\n    - task_id_to_modify (int): The ID of the task to modify.\n    \"\"\"\n    global tasks\n    load_tasks()\n    found = False\n    try:",
         "detail": "run",
         "documentation": {}
     },
