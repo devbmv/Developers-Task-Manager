@@ -1,0 +1,188 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "init",
+        "importPath": "colorama",
+        "description": "colorama",
+        "isExtraImport": true,
+        "detail": "colorama",
+        "documentation": {}
+    },
+    {
+        "label": "Fore",
+        "importPath": "colorama",
+        "description": "colorama",
+        "isExtraImport": true,
+        "detail": "colorama",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_PATH",
+        "kind": 5,
+        "importPath": ".vscode.font_fix",
+        "description": ".vscode.font_fix",
+        "peekOfCode": "BASE_PATH = os.environ.get(\"GITPOD_REPO_ROOT\")\nwith open(f\"{BASE_PATH}/.vscode/settings.json\", \"r+\") as f:\n    content = json.loads(f.read())\n    if \"terminal.integrated.fontFamily\" not in content:\n        print(\"Adding wider and higher font settings\")\n        content[\"terminal.integrated.lineHeight\"] = 1.2\n        content[\"terminal.integrated.letterSpacing\"] = 2\n    else:\n        print(\"Wider and higher font settings already added!\")\n    f.seek(0, os.SEEK_SET)",
+        "detail": ".vscode.font_fix",
+        "documentation": {}
+    },
+    {
+        "label": "parse_task_line",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "load_tasks",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "add_task_and_log",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass\ndef main():\n    \"\"\"",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "delete_task",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass\ndef main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "modify_task",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def modify_task(task_id_to_modify):\n    pass\ndef clear_screen():\n    pass\ndef main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "clear_screen",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def clear_screen():\n    pass\ndef main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def main():\n    \"\"\"\n    The main function of the program. Handles user interaction.\n    \"\"\"\n    init()\n    if os.path.exists(full_path):\n        load_tasks()\n    print(Fore.GREEN + \"Welcome to Developers' Task Manager\")\n    while True:\n        time.sleep(2)",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "tasks",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "tasks = []\n# Initialize task ID based on the current length of tasks\ntask_id = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "task_id",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "task_id = len(tasks)\n# Define a separator for visual clarity in the log file\n# separator= \"-\" * 100\nseparator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "separator",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "separator = \"-\" * shutil.get_terminal_size().columns\n# Define the filename for storing task logs\nfile_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "file_name",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "file_name = \"tasks_log.txt\"\ndesktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "desktop_path",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "desktop_path = Path.home() / \"Desktop\"\nfull_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "full_path",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "full_path = desktop_path / file_name\ndef parse_task_line(line):\n    pass\ndef load_tasks():\n    pass\ndef add_task_and_log(description):\n    pass\ndef delete_task(idx):\n    pass\ndef modify_task(task_id_to_modify):",
+        "detail": "run",
+        "documentation": {}
+    }
+]
